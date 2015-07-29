@@ -1,6 +1,6 @@
--- Modify your first query to order by first name. 
--- The first result should be Irena Majewski and the 
--- last result should be Vidya Schaft.
+-- Update the query to order by first name and then last name. 
+-- The first result should now be Irena Acton and the last 
+-- should be Vidya Zweizig.
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE gender = 'M'
@@ -8,7 +8,7 @@ WHERE gender = 'M'
         first_name = 'Irena'
     OR  first_name = 'Vidya' 
     OR  first_name = 'Maya'
-) ORDER BY first_name ASC;
+) ORDER BY first_name ASC, last_name ASC;
 
 -- Find all employees whose last name starts or ends with 'E' — 30,723 rows.
 SELECT emp_no, first_name, last_name
