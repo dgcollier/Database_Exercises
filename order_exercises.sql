@@ -8,7 +8,7 @@ WHERE gender = 'M'
         first_name = 'Irena'
     OR  first_name = 'Vidya' 
     OR  first_name = 'Maya'
-) ORDER BY last_name ASC, first_name ASC;
+) ORDER BY last_name DESC, first_name DESC;
 
 -- Update your queries for employees with 'E' in their last name to 
 -- sort the results by their employee number. 
@@ -17,7 +17,7 @@ SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name LIKE '%e'
     OR last_name LIKE 'e%'
-ORDER BY emp_no ASC;
+ORDER BY emp_no DESC;
 
 -- Duplicate the previous query and update it to find all 
 -- employees whose last name starts and ends with 'E' — 899 rows.
