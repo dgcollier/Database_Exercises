@@ -1,7 +1,8 @@
 -- Update your query for 'Irena', 'Vidya', or 'Maya' to use OR instead 
 -- of IN — 709 rows.
 -- Now add a condition to find everybody with those names who is 
--- also male — 441 rows.SELECT emp_no, first_name, last_name
+-- also male — 441 rows.
+SELECT emp_no, first_name, last_name
 FROM employees
 WHERE gender = 'M'
     AND (
