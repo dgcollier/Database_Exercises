@@ -1,3 +1,5 @@
+-- Now reverse the sort order for both queries.
+
 -- Change the order by clause so that you order by last name before 
 -- first name. Your first result should still be Irena Acton but now 
 -- the last result should be Maya Zyda.
@@ -18,6 +20,7 @@ FROM employees
 WHERE last_name LIKE '%e'
     OR last_name LIKE 'e%'
 ORDER BY emp_no DESC;
+
 
 -- Duplicate the previous query and update it to find all 
 -- employees whose last name starts and ends with 'E' — 899 rows.
