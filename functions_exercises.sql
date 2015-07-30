@@ -8,10 +8,8 @@ WHERE first_name = 'Irena'
     OR  first_name = 'Maya'
 GROUP BY gender;
 
--- Update your queries for employees with 'E' in their last name to 
--- sort the results by their employee number. 
--- Your results should not change!
-SELECT emp_no, first_name, last_name
+-- use concat to show results in single column
+SELECT concat(first_name, ' ', last_name)
 FROM employees
 WHERE last_name LIKE '%e'
     OR last_name LIKE 'e%'
