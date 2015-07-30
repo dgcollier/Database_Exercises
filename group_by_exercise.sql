@@ -5,8 +5,9 @@ FROM titles
 ORDER BY title;
 
 -- 1. use GROUP BY and find unique employee last names starting with "e"
-SELECT last_name
+-- 2. updated to find unique first/last name combos with last name "e"
+SELECT concat(first_name, ' ', last_name) AS full_name
 FROM employees
 WHERE last_name LIKE '%e'
     AND last_name LIKE 'e%'
-GROUP BY last_name;
+GROUP BY full_name;
