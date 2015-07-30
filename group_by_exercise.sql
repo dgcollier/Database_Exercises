@@ -11,3 +11,10 @@ FROM employees
 WHERE last_name LIKE '%e'
     AND last_name LIKE 'e%'
 GROUP BY full_name;
+
+-- 1. find unique last names with "q" but not "qu"
+SELECT last_name
+FROM employees
+WHERE last_name LIKE '%q%'
+    AND last_name NOT LIKE '%qu%'
+GROUP BY last_name;
