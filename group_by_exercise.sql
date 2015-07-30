@@ -8,8 +8,7 @@ ORDER BY title;
 -- 2. updated to find unique first/last name combos with last name "e"
 SELECT concat(first_name, ' ', last_name) AS full_name
 FROM employees
-WHERE last_name LIKE '%e'
-    AND last_name LIKE 'e%'
+WHERE last_name LIKE 'e%e'
 GROUP BY full_name;
 
 -- 1. find unique last names with "q" but not "qu"
