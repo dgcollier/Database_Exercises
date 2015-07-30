@@ -23,17 +23,16 @@ FROM employees
 WHERE last_name LIKE '%e'
     AND last_name LIKE 'e%';
 
--- Change the query for employees hired in the 90s and born on 
--- Christmas such that the first result is the oldest employee 
--- who was hired last. It should be Khun Bernini.
-SELECT emp_no, first_name, last_name
+--calculate days since hired
+SELECT first_name, last_name, datediff(curdate(), hire_date) AS "Days since hire"
 FROM employees
 WHERE hire_date LIKE '199%'
     AND birth_date LIKE '%-12-25'
 ORDER BY birth_date ASC, hire_date DESC;
 
--- Find all employees with a 'q' in their last name but not 'qu' — 547 rows
-SELECT emp_no, first_name, last_name
+-- add group by to find distinct combos of first/last name
+SELECT concat(first_name, ' ', last_name) AS full_name
 FROM employees
 WHERE last_name LIKE '%q%'
-    AND last_name NOT LIKE '%qu%';
+    AND last_name NOT LIKE '%qu%'
+GROUP BY full_name;
